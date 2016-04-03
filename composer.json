@@ -1,0 +1,35 @@
+{
+    "name": "escapework/laravel-translations",
+    "description": "Package to help you translate your laravel models",
+    "license": "MIT", 
+
+    "authors": [
+        {
+            "name": "Luís Dalmolin",
+            "email": "luis.nh@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.5.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "@stable",
+        "mockery/mockery": "@stable"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "EscapeWork\\Translations\\": "src/"
+        }
+    },
+
+    "minimum-stability": "stable",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.*-dev"
+        }
+    }
+}
