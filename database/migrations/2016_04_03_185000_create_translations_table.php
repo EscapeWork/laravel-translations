@@ -17,12 +17,12 @@ class CreateTranslationsTable extends Migration
             $table->increments('id');
             $table->string('model');
             $table->integer('model_id')->unsigned();
-            $table->string('language', 5);
+            $table->string('locale', 5);
             $table->string('slug')->nullable()->default(null);
             $table->text('data');
             $table->timestamps();
 
-            $table->foreign('language')->references('id')->on('languages')
+            $table->foreign('locale')->references('id')->on('locales')
                   ->onUpdate('restrict')->onDelete('restrict');
         });
     }
