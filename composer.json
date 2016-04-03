@@ -1,6 +1,6 @@
 {
     "name": "escapework/laravel-translations",
-    "description": "Package to help you translate your laravel models",
+    "description": "Package to help you easily translate your laravel models",
     "license": "MIT", 
 
     "authors": [

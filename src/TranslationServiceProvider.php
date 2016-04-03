@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace EscapeWork\Translations;
 
 use Illuminate\Support\ServiceProvider;
 
