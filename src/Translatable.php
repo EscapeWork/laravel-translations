@@ -12,7 +12,7 @@ trait Translatable
 
     public function translations()
     {
-        return $this->morphMany('App\Models\Translation', 'translations', 'model', 'model_id');
+        return $this->morphMany('EscapeWork\Translations\Translation', 'translations', 'model', 'model_id');
     }
 
     public function scopeJoinTranslations($query)

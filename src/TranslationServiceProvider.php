@@ -13,9 +13,9 @@ class TranslationServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {   
+    {
         $this->publishes([
-            base_path() . '/database/migrations' => 'database/migrations',
+            __DIR__ . '/../database/migrations' => base_path('database/migrations'),
         ], 'migrations');
     }
 

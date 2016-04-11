@@ -19,15 +19,10 @@ class Translation extends Model
     protected $fillable = [
         'model',
         'model_id',
-        'language',
+        'locale',
         'slug',
         'data',
     ];
-
-    /**
-     * Traits
-     */
-    use Medias;
 
     public function translations()
     {
@@ -39,14 +34,14 @@ class Translation extends Model
         return new TranslationCollection($models);
     }
 
-    public function store($model, $language, $fields, $options = [])
+    public function store($model, $locale, $fields, $options = [])
     {
         $this->model = get_class($model);
         $options     = array_merge(['slug' => false, 'field' => 'title'], $options);
         $data        = [
             'model'    => $this->model,
             'model_id' => $model->id,
-            'language' => $language,
+            'locale'   => $locale,
             'data'     => serialize((array) $fields),
         ];
 

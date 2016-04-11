@@ -25,7 +25,47 @@ $ php artisan migrate
 
 ## Usage
 
-TODO
+### Creating the locales
+
+First, you need to create the locales that your models will be translated.
+
+```
+EscapeWork\Translations\Locale::create(['id' => 'pt-br', 'title' => 'Português (Brasil)']);
+EscapeWork\Translations\Locale::create(['id' => 'en',    'title' => 'English']);
+```
+
+Then, you need to import the `Translatable` in your models.
+
+```
+use EscapeWork\Translations\Translatable;
+...
+
+class Product extends Model
+{
+
+    use Translatable;
+}
+```
+
+### Storing a translation
+
+For storing a translation, you can do the following:
+
+```
+use EscapeWork\Translations\Translation;
+
+$translation = new Translation;
+$translation->store($model, $locale, (array) $fields); // fields can be an array with as many fields you want
+```
+
+### Deleting translations from a model
+
+```
+use EscapeWork\Translations\Translation;
+
+$translation = new Translation;
+$translation->deleteFromModel($model); // $model should be an instance of Eloquent Model
+```
 
 ## License
 
