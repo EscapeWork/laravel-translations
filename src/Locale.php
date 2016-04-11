@@ -31,4 +31,13 @@ class Locale extends Model
      * Timestamps
      */
     public $timestamps = false;
+
+    public static function all($columns = ['*'])
+    {
+        $columns = is_array($columns) ? $columns : func_get_args();
+
+        $instance = new static;
+
+        return $instance->newQuery()->orderBy('title', 'desc')->get($columns);
+    }
 }
