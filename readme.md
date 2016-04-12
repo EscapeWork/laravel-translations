@@ -58,6 +58,17 @@ $translation = new Translation;
 $translation->store($model, $locale, (array) $fields); // fields can be an array with as many fields you want
 ```
 
+Here it's an example on how you can use with Laravel `$request` object.
+
+```php
+$product = Product::find(1);
+
+foreach ((array) $request->translations as $locale => $data) {
+    $translation = new Translation;
+    $translation->store($product, $locale, $data);
+}
+```
+
 ### Deleting translations from a model
 
 ```php
@@ -66,6 +77,24 @@ use EscapeWork\Translations\Translation;
 $translation = new Translation;
 $translation->deleteFromModel($model); // $model should be an instance of Eloquent Model
 ```
+
+### Getting a translation
+
+For getting an existing translation, you just need to do this:
+
+```php
+$product = Product::find(1);
+echo $product->translations->_get('title');
+```
+
+If you need an translation for an specific locale, just pass the locale as the second argument:
+
+```php
+$product = Product::find(1);
+echo $product->translations->_get('title', 'pt-br');
+```
+
+If you don't pass the `$locale`, the default is gonna be the `config('app.locale')` value.
 
 ## License
 
