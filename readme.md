@@ -1,5 +1,7 @@
 # Laravel Translations
 
+[![Latest Stable Version](https://poser.pugx.org/escapework/laravel-translations/v/stable.png)](https://packagist.org/packages/escapework/laravel-translations) [![Total Downloads](https://poser.pugx.org/escapework/laravel-translations/downloads.png)](https://packagist.org/packages/escapework/laravel-translations)
+
 Easily translate your laravel models to as many languages you need.
 
 ## Installation
@@ -115,4 +117,4 @@ echo $product->title;
 
 ## License
 
-See the [License](https://github.com/EscapeWork/laravel-asset-versioning/blob/master/LICENSE) file.
+See the [License](https://github.com/EscapeWork/laravel-translations/blob/master/LICENSE) file.
