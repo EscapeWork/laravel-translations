@@ -96,6 +96,23 @@ echo $product->translations->_get('title', 'pt-br');
 
 If you don't pass the `$locale`, the default is gonna be the `config('app.locale')` value.
 
+You can also do something like this to make your life easier:
+
+```php
+class Product extends Model
+{
+    ...
+    public function getTitleAttribute()
+    {
+        return $this->translations->_get('title');
+    }
+    ...
+}
+
+// then, just call like a simple field
+echo $product->title;
+```
+
 ## License
 
 See the [License](https://github.com/EscapeWork/laravel-asset-versioning/blob/master/LICENSE) file.
