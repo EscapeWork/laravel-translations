@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class TranslationServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap any application services.
      *
@@ -15,7 +14,7 @@ class TranslationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../database/migrations' => base_path('database/migrations'),
+            __DIR__.'/../database/migrations' => base_path('database/migrations'),
         ], 'migrations');
     }
 
@@ -26,6 +25,5 @@ class TranslationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }

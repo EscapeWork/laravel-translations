@@ -7,14 +7,13 @@ use Illuminate\Support\Str;
 
 class Translation extends Model
 {
-
     /**
-     * Table
+     * Table.
      */
     protected $table = 'translations';
 
     /**
-     * Fillable fields
+     * Fillable fields.
      */
     protected $fillable = [
         'model',
@@ -29,7 +28,7 @@ class Translation extends Model
         return $this->morphTo();
     }
 
-    public function newCollection(array $models = array())
+    public function newCollection(array $models = [])
     {
         return new TranslationCollection($models);
     }
@@ -37,8 +36,8 @@ class Translation extends Model
     public function store($model, $locale, $fields, $options = [])
     {
         $this->model = get_class($model);
-        $options     = array_merge(['slug' => false, 'field' => 'title'], $options);
-        $data        = [
+        $options = array_merge(['slug' => false, 'field' => 'title'], $options);
+        $data = [
             'model'    => $this->model,
             'model_id' => $model->id,
             'locale'   => $locale,
@@ -62,11 +61,11 @@ class Translation extends Model
     protected function createSlug($title)
     {
         $this->slug = Str::slug($title);
-        $count      = 0;
+        $count = 0;
 
         while ($this->slugExists()) {
             $count++;
-            $this->slug = Str::slug($title) . '-' . $count;
+            $this->slug = Str::slug($title).'-'.$count;
         }
 
         return $this->slug;

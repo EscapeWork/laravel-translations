@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Locale extends Model
 {
-
     /**
-     * Table
+     * Table.
      */
     protected $table = 'locales';
 
@@ -20,7 +19,7 @@ class Locale extends Model
     public $incrementing = false;
 
     /**
-     * Fillable
+     * Fillable.
      */
     protected $fillable = [
         'id',
@@ -28,7 +27,7 @@ class Locale extends Model
     ];
 
     /**
-     * Timestamps
+     * Timestamps.
      */
     public $timestamps = false;
 
@@ -36,7 +35,7 @@ class Locale extends Model
     {
         $columns = is_array($columns) ? $columns : func_get_args();
 
-        $instance = new static;
+        $instance = new static();
 
         return $instance->newQuery()->orderBy('title', 'desc')->get($columns);
     }

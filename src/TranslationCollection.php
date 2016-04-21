@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Collection;
 
 class TranslationCollection extends Collection
 {
-
     public function _get($field, $locale = null)
     {
         $locale = $locale ?: config('app.locale');
