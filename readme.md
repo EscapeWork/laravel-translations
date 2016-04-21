@@ -54,10 +54,7 @@ class Product extends Model
 For storing a translation, you can do the following:
 
 ```php
-use EscapeWork\Translations\Translation;
-
-$translation = new Translation;
-$translation->store($model, $locale, (array) $fields); // fields can be an array with as many fields you want
+$product->storeTranslation((array) $data, 'pt-br');
 ```
 
 Here it's an example on how you can use with Laravel `$request` object.
@@ -66,18 +63,14 @@ Here it's an example on how you can use with Laravel `$request` object.
 $product = Product::find(1);
 
 foreach ((array) $request->translations as $locale => $data) {
-    $translation = new Translation;
-    $translation->store($product, $locale, $data);
+    $product->storeTranslation((array) $data, $locale);
 }
 ```
 
 ### Deleting translations from a model
 
 ```php
-use EscapeWork\Translations\Translation;
-
-$translation = new Translation;
-$translation->deleteFromModel($model); // $model should be an instance of Eloquent Model
+$product->deleteTranslations();
 ```
 
 ### Getting a translation
@@ -86,7 +79,7 @@ For getting an existing translation, you just need to do this:
 
 ```php
 $product = Product::find(1);
-echo $product->translations->_get('title');
+echo $product->translations->_get('title'); // this will get the translation for the current config('app.locale') value
 ```
 
 If you need an translation for an specific locale, just pass the locale as the second argument:
