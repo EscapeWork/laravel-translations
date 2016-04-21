@@ -54,6 +54,12 @@ class Product extends Model
 For storing a translation, you can do the following:
 
 ```php
+// $data can have as many fields you want
+$data = [
+    'title'       => 'My translated title',
+    'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+];
+
 $product->storeTranslation((array) $data, 'pt-br');
 ```
 
