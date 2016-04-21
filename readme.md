@@ -1,6 +1,6 @@
 # Laravel Translations
 
-[![Latest Stable Version](https://poser.pugx.org/escapework/laravel-translations/v/stable.png)](https://packagist.org/packages/escapework/laravel-translations) [![Total Downloads](https://poser.pugx.org/escapework/laravel-translations/downloads.png)](https://packagist.org/packages/escapework/laravel-translations)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md) [![Latest Stable Version](https://poser.pugx.org/escapework/laravel-translations/v/stable.png)](https://packagist.org/packages/escapework/laravel-translations) [![Total Downloads](https://poser.pugx.org/escapework/laravel-translations/downloads.png)](https://packagist.org/packages/escapework/laravel-translations)
 
 Easily translate your laravel models to as many languages you need.
 
