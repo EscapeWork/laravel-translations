@@ -44,4 +44,13 @@ trait Translatable
     {
         return (new Translation())->deleteFromModel($this);
     }
+
+    public function findOrFailBySlug($slug)
+    {
+        return $this->select($this->table . '.*')->distinct()
+                    ->with('translations')
+                    ->joinTranslations()
+                    ->where('translations.slug', '=', $slug)
+                    ->firstOrFail();
+    }
 }

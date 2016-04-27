@@ -10,16 +10,8 @@ class TranslationCollection extends Collection
     {
         $locale = $locale ?: config('app.locale');
 
-        foreach ($this->items as $item) {
-            if ($item->locale == $locale) {
-                if ($item->{$field}) {
-                    return $item->{$field};
-                }
-
-                $data = unserialize($item->data);
-
-                return isset($data[$field]) ? $data[$field] : null;
-            }
-        }
+        return $this->first(function($i, $translation) use($locale) {
+            return $translation->locale == $locale;
+        })->getField($field);
     }
 }

@@ -77,4 +77,14 @@ class Translation extends Model
                     ->where('slug', '=', $this->slug)
                     ->first();
     }
+
+    public function getField($field)
+    {
+        if ($this->{$field}) {
+            return $this->{$field};
+        }
+
+        $data = unserialize($this->data);
+        return isset($data[$field]) ? $data[$field] : null;
+    }
 }
