@@ -85,6 +85,7 @@ class Translation extends Model
         }
 
         $data = unserialize($this->data);
+
         return isset($data[$field]) ? $data[$field] : null;
     }
 }
