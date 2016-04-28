@@ -2,7 +2,6 @@
 
 namespace EscapeWork\Translations;
 
-use EscapeWork\Translations\Translation;
 use Illuminate\Database\Eloquent\Collection;
 
 class TranslationCollection extends Collection
@@ -13,6 +12,6 @@ class TranslationCollection extends Collection
 
         return $this->first(function ($i, $translation) use ($locale) {
             return $translation->locale == $locale;
-        }, new Translation)->getField($field);
+        }, new Translation())->getField($field);
     }
 }
