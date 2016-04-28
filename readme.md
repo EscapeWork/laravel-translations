@@ -114,6 +114,11 @@ class Product extends Model
 echo $product->title;
 ```
 
+## Next steps
+
+* Testing;
+* Make use of MySQL 5.7 JSON types, where a search inside the translations will be available;
+
 ## License
 
 See the [License](https://github.com/EscapeWork/laravel-translations/blob/master/LICENSE) file.
