@@ -84,8 +84,14 @@ class Translation extends Model
             return $this->{$field};
         }
 
-        $data = unserialize($this->data);
+        try {
+            $data = unserialize($this->data);
 
-        return isset($data[$field]) ? $data[$field] : null;
+            return isset($data[$field]) ? $data[$field] : null;
+        }
+        catch (\Exception $e) {
+            \Log::error('Erro ao deserializar os dados do model ' . $this->model . ' #' .$this->model_id);
+            return null;
+        }
     }
 }
