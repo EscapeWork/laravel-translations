@@ -10,7 +10,7 @@ class TranslationCollection extends Collection
     {
         $locale = $locale ?: config('app.locale');
 
-        return $this->first(function ($i, $translation) use ($locale) {
+        return $this->first(function ($translation, $i) use ($locale) {
             return $translation->locale == $locale;
         }, new Translation())->getField($field);
     }
