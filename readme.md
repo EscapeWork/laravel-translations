@@ -9,7 +9,7 @@ Easily translate your laravel models to as many languages you need.
 Add this line to your `composer.json` file:
 
 ```
-    "escapework/laravel-translations": "0.1.*"
+    "escapework/laravel-translations": "0.2.*"
 ```
 
 And add this service provider to your laravel providers:
